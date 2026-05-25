@@ -1,0 +1,9 @@
+print(f"Dataset Shape: {df.shape}\n")
+
+# 2. Identify columns and data types
+print("Columns and Data Types:")
+print(df.dtypes)
+
+# 3. View the first few rows
+print("\nFirst 5 Rows:")
+print(df.head())
