@@ -1,0 +1,32 @@
+# Chart 1: Visualizing Outliers / Distribution of Fares
+sns.boxplot(ax=axes[0], x='Pclass', y='Fare', data=df)
+axes[0].set_title('Fare Distribution across Passenger Classes')
+
+# Chart 2: Visualizing Insights (Survival Count based on Gender)
+sns.countplot(ax=axes[1], x='Survived', hue='Sex', data=df)
+axes[1].set_title('Survival Count Segmented by Gender')
+axes[1].set_xticklabels(['Perished', 'Survived'])
+
+plt.tight_layout()
+plt.show()
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set visual style
+sns.set_theme(style="whitegrid")
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# Chart 1: Visualizing Outliers / Distribution of Fares
+sns.boxplot(ax=axes[0], x='Pclass', y='Fare', data=df)
+axes[0].set_title('Fare Distribution across Passenger Classes')
+
+# Chart 2: Visualizing Insights (Survival Count based on Gender)
+sns.countplot(ax=axes[1], x='Survived', hue='Sex', data=df)
+axes[1].set_title('Survival Count Segmented by Gender')
+axes[1].set_xticklabels(['Perished', 'Survived'])
+
+plt.tight_layout()
+plt.show()
+
+
