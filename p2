@@ -1,0 +1,13 @@
+# 2. Group data to find basic trends (e.g., Survival rate by Gender)
+# Note: Converting Survived back to numeric temporarily for mean calculation
+df['Survived'] = df['Survived'].astype(int)
+survival_by_sex = df.groupby('Sex')['Survived'].mean()
+print("\nSurvival Rate by Gender:")
+print(survival_by_sex)
+
+# 3. Detect Outliers using IQR (Interquartile Range) for 'Fare'
+Q1 = df['Fare'].quantile(0.25)
+Q3 = df['Fare'].quantile(0.75)
+IQR = Q3 - Q1
+outliers = df[(df['Fare'] < (Q1 - 1.5 * IQR)) | (df['Fare'] > (Q3 + 1.5 * IQR))]
+print(f"\nNumber of outlier records detected in 'Fare': {len(outliers)}")
